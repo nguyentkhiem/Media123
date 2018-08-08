@@ -25,6 +25,11 @@ Route::get('listImage', 'FrontendController@getListImage');
 
 Route::get('register', 'RegisterController@getRegister');
 Route::post('register', 'RegisterController@postRegister');
+Route::get('checkmail/{user_mail}/{token}', 'RegisterController@getCheckMail')->name('checkmail');
+
+
+Route::get('facebook/redirect', 'Auth\SocialiteController@redirectToProvider');
+Route::get('facebook/callback', 'Auth\SocialiteController@handleProviderCallback');
 
 Route::group(['namespace'=>'Admin'],function (){
 	Route::group(['prefix'=>'login', 'middleware'=>'CheckLogin'], function (){
@@ -130,3 +135,6 @@ Route::group(['namespace'=>'Admin'],function (){
 		});
 	});
 });
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

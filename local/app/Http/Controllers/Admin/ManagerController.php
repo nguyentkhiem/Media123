@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
 
@@ -24,7 +25,7 @@ class ManagerController extends Controller
         $users = new Users;
         $arr['user_name'] = $request->name;
         $arr['email'] = $request->email;
-        $arr['password'] = $request->password;
+        $arr['password'] = Hash::make($request->password);
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();
             $arr['user_img'] = $img;

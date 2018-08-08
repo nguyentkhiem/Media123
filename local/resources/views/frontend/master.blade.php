@@ -66,7 +66,15 @@
 </script>
 </head>
 </head>
-<body>    
+<body>  
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.1&appId=676137169419835&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>  
 	<!-- header -->
 	<header id="header">
 		<div class="container">
@@ -89,7 +97,7 @@
 					<img width="200" height="98" src="img/home/magento.png">
 				</div>
 				<div id="User" class="col-md-4 col-sm-12 col-xs-12">
-					@auth<h3><i class="fas fa-hand-peace"> {{Auth::user()->user_name}} </i></h3>@endauth
+					@auth<h3><img style="margin:0px 5px; width: 40px; height: 40px; border-radius: 40px;" src="{{asset('local/storage/app/avatar/'.Auth::user()->user_img)}}"> {{Auth::user()->user_name}} <i class="fas fa-hand-peace"></i></h3>@endauth
 					
 				</div>
 				<div id="cart" class="col-md-2 col-sm-12 col-xs-12">
@@ -123,7 +131,9 @@
 						<!-- <a href="#" id="pull">Danh mục</a> -->
 					</nav>
 
-					<div id="hottrends">
+					
+
+					<div style="margin-bottom: 20px;" id="hottrends">
 						<h3>hot trends</h3>
 						<ul>
 							<li class="menu-item1"><a href="#" title="">Bản tình ca mùa đông</a></li>
@@ -132,6 +142,8 @@
 							<li class="menu-item1"><a href="#" title="">Tin tức bạn không thể bỏ qua</a></li>					
 						</ul>
 					</div>
+
+					<div class="fb-page" data-href="https://www.facebook.com/ominext" data-tabs="timeline" data-width="260px" data-height="60px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ominext" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ominext">Ominext JSC</a></blockquote></div>
 
 
 					<div id="banner-l" class="text-center">

@@ -12,18 +12,21 @@
 				<p>500.000 lượt xem</p>
 			</div>
 			<div id="khac">
-				<p class="item"><a href="#"><i class="fas fa-thumbs-up"> 10N</i></a></p>
+				{{-- <p class="item"><a href="#"><i class="fas fa-thumbs-up"> 10N</i></a></p>
 				<p class="item"><a href="#"><i class="fas fa-thumbs-down"> 40</i></a></p>
-				<p class="item"><a href="#"><i class="fas fa-share"></i> CHIA SẺ</a></p>
+				<p class="item"><a href="#"><i class="fas fa-share"></i> CHIA SẺ</a></p> --}}
+				<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 			</div>
 		</div>
 		<div style="clear: both;"></div>
-		<div id="nguoidang">
+		<div style="border-bottom: 1px solid gray; margin-bottom: 20px;" id="nguoidang">
 			<img src="img/home/12.jpg">
 			<h4>Nguyễn Thành Khiêm</h4>
 			<p id="xuatban">Xuất bản 6 thg 8, 2018</p>
 			<p id="info">{!!$movie->movie_info!!}</p>
 		</div>
+		<div><h4 style="color: black; font-weight: bold;">Bình luận facebook</h4></div>
+		<div class="fb-comments" data-href="https://developers.facebook.com" data-numposts="1"></div>
 	</div>
 </div>
 
