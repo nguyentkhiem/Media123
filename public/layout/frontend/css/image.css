@@ -1,0 +1,85 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: arial;
+	font-size: 14px;
+	color: #666;
+}	
+#main{
+	margin:0px;
+}
+#image img{
+	width: 825px;
+	height: 600px;
+	
+}
+/*@media (max-width: 992px){
+	#main #video iframe{
+		width: 510px;
+		height: 300px;
+	}
+}
+@media (max-width: 768px){
+	#main #video iframe{
+		width: 510px;
+		height: 300px;
+		margin-top: 20px;
+	}
+}*/
+.detailsImage{
+	/*border-bottom: 1px solid gray;*/
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+.detailsImage h2{
+	margin-top: 30px; 
+	color: black;
+	padding: 0px;
+	text-transform: capitalize;
+}
+.detailsImage h2 i{
+	color:#800000;
+}
+.detailsImage #thongtin{
+	border-bottom: 1px solid gray;
+	overflow: auto;
+}
+.detailsImage #thongtin #luotxem{
+	float: left;
+}
+.detailsImage #khac{
+	float: right;
+}
+.detailsImage #khac .item{
+	float: left;
+	margin:0px 5px;
+}
+.detailsImage #khac .item a{
+	color: gray;
+	text-decoration: none;
+}
+.detailsImage #khac .item:hover a{
+	color: blue;
+}
+.detailsImage #nguoidang{
+	margin-top: 40px;
+}
+.detailsImage #nguoidang img{
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 8px;
+}
+.detailsImage #nguoidang h4{
+	padding: 0px;
+	margin:4px 0px;
+	font-weight: bold;
+}
+.detailsImage #nguoidang p#info{
+	font-size: 15px;
+}

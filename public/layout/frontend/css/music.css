@@ -1,0 +1,85 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: arial;
+	font-size: 14px;
+	color: #666;
+}	
+#main{
+	margin:0px;
+}
+#music iframe{
+	width: 700px;
+	height: 400px;
+	
+}
+/*@media (max-width: 992px){
+	#main #video iframe{
+		width: 510px;
+		height: 300px;
+	}
+}
+@media (max-width: 768px){
+	#main #video iframe{
+		width: 510px;
+		height: 300px;
+		margin-top: 20px;
+	}
+}*/
+.detailsMusic{
+	/*border-bottom: 1px solid gray;*/
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+.detailsMusic h2{
+	margin-top: 30px; 
+	color: black;
+	padding: 0px;
+	text-transform: capitalize;
+}
+.detailsMusic h2 i{
+	color:#800000;
+}
+.detailsMusic #thongtin{
+	border-bottom: 1px solid gray;
+	overflow: auto;
+}
+.detailsMusic #thongtin #luotxem{
+	float: left;
+}
+.detailsMusic #khac{
+	float: right;
+}
+.detailsMusic #khac .item{
+	float: left;
+	margin:0px 5px;
+}
+.detailsMusic #khac .item a{
+	color: gray;
+	text-decoration: none;
+}
+.detailsMusic #khac .item:hover a{
+	color: blue;
+}
+.detailsMusic #nguoidang{
+	margin-top: 40px;
+}
+.detailsMusic #nguoidang img{
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 8px;
+}
+.detailsMusic #nguoidang h4{
+	padding: 0px;
+	margin:4px 0px;
+	font-weight: bold;
+}
+.detailsMusic #nguoidang p#info{
+	font-size: 15px;
+}

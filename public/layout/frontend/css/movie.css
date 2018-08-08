@@ -1,0 +1,85 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: arial;
+	font-size: 14px;
+	color: #666;
+}	
+#main{
+	margin:0px;
+}
+ #video iframe{
+	width: 825px;
+	height: 544px;
+	
+}
+/*@media (max-width: 992px){
+	#main #video iframe{
+		width: 510px;
+		height: 300px;
+	}
+}
+@media (max-width: 768px){
+	#main #video iframe{
+		width: 510px;
+		height: 300px;
+		margin-top: 20px;
+	}
+}*/
+.detailsMovie{
+	/*border-bottom: 1px solid gray;*/
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+.detailsMovie h2{
+	margin-top: 30px; 
+	color: black;
+	padding: 0px;
+	text-transform: capitalize;
+}
+.detailsMovie h2 i{
+	color:#800000;
+}
+.detailsMovie #thongtin{
+	border-bottom: 1px solid gray;
+	overflow: auto;
+}
+.detailsMovie #thongtin #luotxem{
+	float: left;
+}
+.detailsMovie #khac{
+	float: right;
+}
+.detailsMovie #khac .item{
+	float: left;
+	margin:0px 5px;
+}
+.detailsMovie #khac .item a{
+	color: gray;
+	text-decoration: none;
+}
+.detailsMovie #khac .item:hover a{
+	color: blue;
+}
+.detailsMovie #nguoidang{
+	margin-top: 40px;
+}
+.detailsMovie #nguoidang img{
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 8px;
+}
+.detailsMovie #nguoidang h4{
+	padding: 0px;
+	margin:4px 0px;
+	font-weight: bold;
+}
+.detailsMovie #nguoidang p#info{
+	font-size: 15px;
+}
