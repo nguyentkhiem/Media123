@@ -55,7 +55,7 @@
 												?>
 											</td>
 											<td>
-												<iframe poster="{{asset('local/storage/app/avatar/'.$movie->movie_logo)}}" width="200" height="200" src="https://www.youtube.com/embed/{{$movie->movie_video}}" frameborder="0" allowfullscreen="allowfullscreen">
+												<iframe poster="{{asset('local/storage/app/avatar/'.$movie->movie_logo)}}" width="200" height="200" src="{{$movie->movie_video}}" frameborder="0" allowfullscreen="allowfullscreen">
 												</iframe>
 											</td>
 											<td>{!!str_limit($movie->movie_info, 40, '...')!!}</td>

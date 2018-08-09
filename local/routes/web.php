@@ -17,18 +17,30 @@ Route::get('musicDetails/{id}/{slug}.html', 'FrontendController@getMusicDetails'
 Route::get('imageDetails/{id}/{slug}.html', 'FrontendController@getImageDetails');
 Route::get('newsDetails/{id}/{slug}.html', 'FrontendController@getNewsDetails');
 
+Route::get('movie_vote/{movie_id}/{votes}', 'FrontendController@getVoteMovie')->name('movie_vote');
 
 Route::get('listMovie', 'FrontendController@getListMovie');
 Route::get('listMusic', 'FrontendController@getListMusic');
 Route::get('listNews', 'FrontendController@getListNews');
 Route::get('listImage', 'FrontendController@getListImage');
 
+
 Route::get('register', 'RegisterController@getRegister');
 Route::post('register', 'RegisterController@postRegister');
+Route::get('checkmail/{user_mail}/{token}', 'RegisterController@getCheckMail')->name('checkmail');
+
+
+
+
+// Route::get('facebook/redirect', 'Auth\SocialiteController@redirectToProvider');
+// Route::get('facebook/callback', 'Auth\SocialiteController@handleProviderCallback');
+
+Route::get('/redirect/{social}', 'SocialAuthController@redirect');
+Route::get('/callback/{social}', 'SocialAuthController@callback');
 
 Route::group(['namespace'=>'Admin'],function (){
 	Route::group(['prefix'=>'login', 'middleware'=>'CheckLogin'], function (){
-		Route::get('/', 'LoginController@getLogin');
+		Route::get('/', 'LoginController@getLogin')->name('login');
 		Route::post('/', 'LoginController@postLogin');
 	});
 
@@ -130,3 +142,6 @@ Route::group(['namespace'=>'Admin'],function (){
 		});
 	});
 });
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

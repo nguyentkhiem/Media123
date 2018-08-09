@@ -43,7 +43,7 @@
 									</div>
 									<div class="form-group" >
 										<label>URL video</label>
-										<input type="text" name="url" class="form-control" value="f_LgWgzCPnQ?list=RDf_LgWgzCPnQ">
+										<input type="text" name="url" class="form-control" value="https://openload.co/f/z2Ohu4BdeAY">
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

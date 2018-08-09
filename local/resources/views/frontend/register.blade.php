@@ -30,6 +30,7 @@
                             @foreach($errors->all() as $error)
                                     <p class="alert alert-danger">{{$error}}</p>
                             @endforeach
+                            @include('flash::message')
                            
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -55,7 +56,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <input type="submit" name="submit" value="Đăng ký" class="btn btn-success" />
-                                    <a href=""><button type="reset" class="btn btn-default" name="reset">Làm mới</button></a>
+                                    <a style="background: blue; color: white;" class="btn btn-default" href="{{asset('register')}}">Làm mới</a>
                                 </div>
                             </div>
                             {{csrf_field()}}

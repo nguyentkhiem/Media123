@@ -48,6 +48,7 @@
 					<form role="form" method="post">
 						<fieldset>
 							@include('errors.error')
+							@include('flash::message')
 							<div class="form-group">
 								<input class="form-control" placeholder="E-mail" name="email" type="email" value="{{old('user_mail')}}" autofocus="">
 							</div>
@@ -60,7 +61,7 @@
 								</label>
 							</div>
 							<div id="face" class="form-group">
-								<a id="facebook" href="#" class="btn btn-default"><i class="fab fa-facebook-f"></i></a>
+								<a id="facebook" href="{{url('redirect/facebook')}}" class="btn btn-default"><i class="fab fa-facebook-f"></i></a>
 								<a id="google" href="#" class="btn btn-default"><i class="fab fa-google"></i></a>
 							</div>
 							<input type="submit" name="submit" value="Đăng nhập" class="btn btn-primary">

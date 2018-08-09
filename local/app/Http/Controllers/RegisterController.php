@@ -6,6 +6,8 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Models\Users;
 use App\Http\Requests\RegisterRequest;
+use Mail;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -29,10 +31,34 @@ class RegisterController extends Controller
     	}else{
     		$arr['user_img'] = '12.jpg';
     	}
-    	
     	$arr['user_level'] = '3';
+        $arr['token'] = str_random(40);
+        $arr['status'] = '0';
+        $email = $request->email;
+        // dd($arr);
+        // dd(config('mail.host'));
+        Mail::send('frontend.email', $arr, function ($message) use($email){
+            $message->from('www.nguyentkhiem96@gmail.com', 'NguyenThanhKhiem');
+
+            $message->to($email, $email);
+
+            // $message->cc('nguyenthanhkhiem81196@gmail.com', 'NguyenThanhKhiem');
+
+            $message->subject('Xác nhận đăng ký từ Media Port');
+        });
+
 
     	$user::insert($arr);
-    	return redirect()->intended('login')->withInput()->with('error', 'Bạn cần đăng nhập để tiếp tục');
+        flash('Bạn check mail để tiếp tục')->success();
+    	return redirect()->intended('register');
+
+    }
+    public function getCheckMail($user_mail, $token){
+        $count = DB::table('vp_users')->where('email', '=', $user_mail)->where('token', '=', $token)->update(['status' => 1]);
+        
+        
+        flash('Bạn cần đăng nhập để tiếp tục')->success();
+        return redirect()->intended('login');
+        // ->withInput()->with('error', 'Bạn cần đăng nhập để tiếp tục');
     }
 }
