@@ -61,7 +61,7 @@
 								</label>
 							</div>
 							<div id="face" class="form-group">
-								<a id="facebook" href="{{url('/facebook/redirect')}}" class="btn btn-default"><i class="fab fa-facebook-f"></i></a>
+								<a id="facebook" href="{{url('redirect/facebook')}}" class="btn btn-default"><i class="fab fa-facebook-f"></i></a>
 								<a id="google" href="#" class="btn btn-default"><i class="fab fa-google"></i></a>
 							</div>
 							<input type="submit" name="submit" value="Đăng nhập" class="btn btn-primary">

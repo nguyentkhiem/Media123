@@ -30,6 +30,7 @@
                             @foreach($errors->all() as $error)
                                     <p class="alert alert-danger">{{$error}}</p>
                             @endforeach
+                            @include('flash::message')
                            
                                 <div class="col-md-12">
                                     <div class="form-group">

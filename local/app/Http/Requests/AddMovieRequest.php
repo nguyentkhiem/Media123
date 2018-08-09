@@ -25,7 +25,7 @@ class AddMovieRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'img' => 'required|img',
+            'img' => 'required|image',
             'url' => 'required',
             'details' => 'required',
         ];

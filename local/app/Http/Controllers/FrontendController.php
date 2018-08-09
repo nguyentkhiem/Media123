@@ -9,7 +9,9 @@ use App\Models\Movie;
 use App\Models\Music;
 use App\Models\News;
 use App\Models\Banner;
+use App\Models\Votes;
 use DB;
+use Auth;
 
 class FrontendController extends Controller
 {
@@ -25,6 +27,9 @@ class FrontendController extends Controller
 
     public function getMovieDetails($id){
     	$data['movie'] = Movie::find($id);
+        $data['votes'] = DB::table('vp_vote')->where('vote_movie', '=', $id)->avg('votes');
+
+        // dd($data['votes']);
     	return view('frontend.movieDetails', $data);
     }
 
@@ -83,4 +88,26 @@ class FrontendController extends Controller
     	}
     	return view('frontend.listImage', $data);
     }
+
+    public function getVoteMovie($movie_id, $vote){
+        $updateVotes = DB::table('vp_vote')->where('vote_user', '=', auth::id())->where('vote_movie', '=', $movie_id)->count();
+
+        if(  $updateVotes > 0 ) {
+            $updateVotes = DB::table('vp_vote')->where('vote_user', '=', auth::id())->where('vote_movie', '=', $movie_id)->update(['votes' => $vote]);
+        }else {
+            $updateVotes = new Votes();
+            $updateVotes->vote_user = auth::id();
+            $updateVotes->vote_movie = $movie_id;
+            $updateVotes->votes = $vote;
+            $updateVotes->save();
+        }
+
+       
+        $avgVote = DB::table('vp_vote')->where('vote_movie', $movie_id)->avg('votes');
+        $vote = DB::table('vp_movie')->where('movie_id', '=', $movie_id)->update(['votes' => $avgVote]);
+// dd($avgVote);
+        return back();
+    }
+
+
 }

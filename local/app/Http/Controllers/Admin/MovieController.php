@@ -32,6 +32,7 @@ class MovieController extends Controller
     	$movie->movie_video = $request->url;
     	$movie->movie_info = $request->details;
     	$movie->movie_cate = $request->cate;
+        $movie->votes = 0;
     	$movie->save();
     	$request->img->move('local/storage/app/avatar', $filename);
     	return redirect()->intended('admin/movie');
@@ -56,6 +57,7 @@ class MovieController extends Controller
     	$arr['movie_video'] = $request->url;
     	$arr['movie_info'] = $request->details;
     	$arr['movie_cate'] = $request->cate;
+        $arr['votes'] = 0;
 
     	$movie::where('movie_id', $id)->update($arr);
     	return redirect()->intended('admin/movie');

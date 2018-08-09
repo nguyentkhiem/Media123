@@ -1,9 +1,17 @@
 @extends('frontend.master')
 @section('title', 'Xem phim')
 @section('main')
+<style type="text/css">
+	.checked{
+		color: red;
+	}
+	.uncheck{
+		color: black;
+	}
+</style>
 <div id="main" class="col-md-9 col-sm-12 col-xs-12">
 	<div id="video">
-		<iframe poster="{{asset('local/storage/app/avatar/'.$movie->movie_video)}}" src="https://www.youtube.com/embed/{{$movie->movie_video}}" allow="autoplay" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+		<iframe poster="{{asset('local/storage/app/avatar/'.$movie->movie_video)}}" src="{{$movie->movie_video}}" allow="autoplay" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 	</div>
 	<div class="detailsMovie col-md-12 col-sm-12 col-xs-12">
 		<h2><i class="fas fa-film"></i> {{$movie->movie_name}}</h2>
@@ -17,6 +25,28 @@
 				<p class="item"><a href="#"><i class="fas fa-share"></i> CHIA SẺ</a></p> --}}
 				<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 			</div>
+		</div>
+		<div style="border-bottom: 1px solid gray; margin:20px 0px;">
+			@guest
+				<h4 style="font-weight: bold; color: black;">Đánh giá chất lượng</h4>
+				@for($i = 1; $i <= $movie->votes; $i++)
+					<a href="{{route('login')}}" ><i class="fas fa-star checked"></i></a>
+				@endfor
+				@for($i = 1; $i <= (5-$movie->votes); $i++)
+					<a href="{{route('login')}}" ><i class="fas fa-star uncheck"></i></a>
+				@endfor
+			@endguest
+
+			@auth
+				<h4 style="font-weight: bold; color: black;">Đánh giá chất lượng</h4>
+				@for($i = 1; $i <= $movie->votes; $i++)
+					<a href="{{route('movie_vote', [$movie->movie_id, $i])}}" ><i class="fas fa-star checked"></i></a>
+				@endfor
+				@for($i = 1; $i <= (5-(int)$movie->votes); $i++)
+				{{-- <?php $a = $i + $movie->votes; ?> --}}
+					<a href="{{route('movie_vote', [$movie->movie_id, $i])}}" ><i class="fas fa-star uncheck"></i></a>
+				@endfor
+			@endauth
 		</div>
 		<div style="clear: both;"></div>
 		<div style="border-bottom: 1px solid gray; margin-bottom: 20px;" id="nguoidang">

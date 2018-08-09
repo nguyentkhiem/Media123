@@ -49,7 +49,9 @@ class RegisterController extends Controller
 
 
     	$user::insert($arr);
-    	return redirect()->intended('login')->withInput()->with('error', 'Bạn cần đăng nhập để tiếp tục');
+        flash('Bạn check mail để tiếp tục')->success();
+    	return redirect()->intended('register');
+
     }
     public function getCheckMail($user_mail, $token){
         $count = DB::table('vp_users')->where('email', '=', $user_mail)->where('token', '=', $token)->update(['status' => 1]);
