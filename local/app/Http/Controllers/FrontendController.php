@@ -17,7 +17,7 @@ class FrontendController extends Controller
 {
     public function getHome(){
     	// $data['category'] = Category::orderBy('cate_id', 'ASC')->get();
-    	$data['banners'] = Banner::orderBy('banner_id', 'DESC')->get();
+    	$data['banners'] = Banner::where('banner_status', '=', 1)->orderBy('banner_id', 'DESC')->get();
     	$data['movies'] = Movie::orderBy('movie_id', 'DESC')->take(8)->get();
     	$data['musics'] = Music::orderBy('music_id', 'DESC')->take(8)->get();
     	$data['images'] = Images::orderBy('image_id', 'DESC')->take(8)->get();

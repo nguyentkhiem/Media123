@@ -29,8 +29,8 @@
 										<input required type="email" name="email" class="form-control" value="{{$list->email}}">
 									</div>
 									<div class="form-group" >
-										<label>Password</label>
-										<input required type="password" name="password" class="form-control" value="{{$list->password}}">
+										<label>Password</label> <span style="color: red;">Thay đổi password thì nhập nhé</span>
+										<input type="password" name="password" class="form-control" value="">
 									</div>
 									<div class="form-group" >
 										<label>Ảnh đại diện</label>
@@ -40,9 +40,9 @@
 									 <div class="form-group">
                                     <label>Cấp độ</label>
                                     <select name="level" class="form-control">
-                                        <option value="1" @if($list->user_level==1) selected @endif>User 1</option>
-                                        <option value="2" @if($list->user_level==2) selected @endif>User 2</option>
-                                        <option value="3" @if($list->user_level==3) selected @endif>User 3</option>
+                                        <option value="1" @if($list->user_level==1) selected @endif>Admin</option>
+                                        <option value="2" @if($list->user_level==2) selected @endif>User 1</option>
+                                        <option value="3" @if($list->user_level==3) selected @endif>User 2</option>
                                     </select>
                                 </div>
 									

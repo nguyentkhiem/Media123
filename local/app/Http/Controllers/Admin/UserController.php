@@ -10,6 +10,7 @@ use App\Http\Requests\AddUsersRequest;
 use App\Http\Requests\EditUsersRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
+use Auth;
 use DB;
 
 class UserController extends Controller
@@ -34,6 +35,8 @@ class UserController extends Controller
         $users->password = bcrypt($request->password);
         $users->user_img = $filename;
         $users->user_level = $request->level;
+        $users->token = str_random(40);
+        $users->status = 1;
         $users->save();
         $request->img->move('local/storage/app/avatar', $filename);
         return redirect()->intended('admin/user');
@@ -50,21 +53,27 @@ class UserController extends Controller
         $users = new Users;
         $arr['user_name'] = $request->name;
         $arr['email'] = $request->email;
-        $arr['password'] = Hash::make($request->password);
-        // if($request->password==$users->password){
-        //     $arr['password'] = $users->password;
-        // }else{
-        //     unset($users->password);
-        //     $arr['password'] = bcrypt($request->password);
-        // }
+       
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();
             $arr['user_img'] = $img;
             $request->img->move('local/storage/app/avatar', $img);
         }
         $arr['user_level'] = $request->level;
+        $arr['token'] = str_random(40);
+        $arr['status'] = '1';
 
-        $users::where('user_id', $id)->update($arr);
+        // $pass = DB::table('vp_users')->where('user_id', $id)->select('password')->first();
+        
+        // dd($pass->password);
+
+        if($request->password == ''){
+            $users::where('user_id', $id)->update($arr);
+        }else{
+            $arr['password'] = Hash::make($request->password);
+            $users::where('user_id', $id)->update($arr);
+        }
+            
             return redirect()->intended('admin/user');
     }
 

@@ -32,7 +32,7 @@
 				@for($i = 1; $i <= $movie->votes; $i++)
 					<a href="{{route('login')}}" ><i class="fas fa-star checked"></i></a>
 				@endfor
-				@for($i = 1; $i <= (5-$movie->votes); $i++)
+				@for($i = 1; $i <= (5-(int)$movie->votes); $i++)
 					<a href="{{route('login')}}" ><i class="fas fa-star uncheck"></i></a>
 				@endfor
 			@endguest
@@ -43,8 +43,8 @@
 					<a href="{{route('movie_vote', [$movie->movie_id, $i])}}" ><i class="fas fa-star checked"></i></a>
 				@endfor
 				@for($i = 1; $i <= (5-(int)$movie->votes); $i++)
-				{{-- <?php $a = $i + $movie->votes; ?> --}}
-					<a href="{{route('movie_vote', [$movie->movie_id, $i])}}" ><i class="fas fa-star uncheck"></i></a>
+				<?php $a = $i + $movie->votes; ?>
+					<a href="{{route('movie_vote', [$movie->movie_id, $a])}}" ><i class="fas fa-star uncheck"></i></a>
 				@endfor
 			@endauth
 		</div>

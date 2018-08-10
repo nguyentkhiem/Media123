@@ -20,15 +20,15 @@
 								{{-- @include('errors/note') --}}
 								<div class="form-group">
 									<label>Name</label> 
-	    							<input type="text" name="name" class="form-control" value="{{$update->user_name}}" >
+	    							<input required type="text" name="name" class="form-control" value="{{$update->user_name}}" >
 								</div>
 								<div class="form-group">
 									<label>Email</label> 
-	    							<input type="text" name="email" class="form-control" value="{{$update->email}}">
+	    							<input required type="text" name="email" class="form-control" value="{{$update->email}}">
 								</div>
 								<div class="form-group">
 									<label>Password</label> 
-	    							<input type="password" name="password" class="form-control" value="{{$update->password}}" >
+	    							<input required type="password" name="password" class="form-control" value="{{$update->password}}" >
 								</div>
 								<div class="form-group" >
 										<label>Ảnh đại diện</label>
