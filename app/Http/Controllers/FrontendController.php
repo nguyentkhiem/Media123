@@ -25,8 +25,9 @@ class FrontendController extends Controller
     	return view('frontend.home', $data);
     }
 
-    public function getMovieSelect($id){
+    public static function getMovieSelect($id){
         $data['movie'] = Movie::find($id);
+        // $data['movies'] = Movie::user($id);
         return view('frontend.movieSelect', $data);
     }
 

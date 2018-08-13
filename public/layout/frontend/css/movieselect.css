@@ -1,3 +1,71 @@
 #main{
-	
+	background: #F5F5DC;
+	opacity: 100;
+	padding: 10px;
+	margin: 0px;
+}
+.row{
+	padding: 0px;
+	margin: 0px;
+}
+.clear-both{
+	clear: both;
+}
+#img{
+	width:100%;
+	height:100%;
+	position: relative;
+	border: 2px inset gray;
+}
+#main #trai .click1{
+	position: absolute;
+	bottom: 2%;
+	z-index: 1000;
+	left: 6%;
+	width:42%;
+}
+#main #trai .click2{
+	position: absolute;
+	position: absolute;
+	bottom: 2%;
+	z-index: 1000;
+	left: 50%;
+	width:44%;
+}
+#phai h2{
+	color: 	#2F4F4F;
+	font-weight: bold;
+	font-size: 24px;
+}
+#phai p{
+	color: #800000;
+}
+#phai p span.hightlight{
+	color: 	#B8860B;
+	font-weight: bold;
+}
+#phai p span.hight{
+	color: 	#000080;
+}
+#noidung{
+	margin-top: 30px; 
+}
+#noidung h2#noidungphim{
+	border: 1px solid gray;
+	border-top: 2px solid 	#556B2F;
+	padding: 5px 10px;
+	background: #008B8B;
+	color: white;
+	font-size: 24px;
+}
+#details{
+	font-size: 23px;
+}
+#noidung p img{
+	width: 100%;
+	height: 600px;
+}
+#noidung iframe{
+	width: 100%;
+	height:400px;
 }

@@ -11,6 +11,7 @@ class Movie extends Model
     protected $guarded = [];
     protected static $movie;
     protected static $cate;
+    protected static $user;
 
     public static function movies(){
     	self::$movie = DB::table('vp_movie')->join('vp_categories', 'vp_movie.movie_cate', '=', 'vp_categories.cate_id')->orderBy('movie_id', 'DESC')->paginate(2);
@@ -21,4 +22,8 @@ class Movie extends Model
     	self::$movie = DB::table('vp_movie')->join('vp_categories', 'vp_movie.movie_cate', '=', 'vp_categories.cate_id')->take(1)->get();
     	return self::$movie;
     }
+
+    public static function user($id){
+        return $user = DB::table('vp_movie')->join('vp_users', 'vp_movie.movie_user', '=', 'vp_users.user_id')->where('user_id', '=', $id)->get();
+    } 
 }

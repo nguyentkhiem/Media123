@@ -33,7 +33,7 @@
 						<p class="price">{{$movie->movie_name}}</p>
 						<div class="vietsub"><span>HD - Vietsub - Thuyết minh</span></div>	  
 						<div class="marsk">
-							<a title="xem phim" href="{{asset('movieDetails/'.$movie->movie_id.'/'.$movie->movie_slug.'.html')}}"><i style="font-size: 50px;" class="fas fa-play-circle"></i></a>
+							<a title="xem phim" href="{{asset('movieSelect/'.$movie->movie_id)}}"><i style="font-size: 50px;" class="fas fa-play-circle"></i></a>
 						</div>                                    
 					</div>
 				@endforeach
