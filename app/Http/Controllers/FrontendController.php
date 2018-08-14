@@ -26,8 +26,10 @@ class FrontendController extends Controller
     }
 
     public static function getMovieSelect($id){
-        $data['movie'] = Movie::find($id);
-        // $data['movies'] = Movie::user($id);
+        $data['movie'] = Movie::user($id); 
+
+        // $data['movie'][] = Movie::find($id);
+        // dd($data['movie']);
         return view('frontend.movieSelect', $data);
     }
 

@@ -47,6 +47,8 @@ class MovieController extends Controller
     }
 
     public function postEditMovie(EditMovieRequest $request,$id){
+        // dd($request->all());
+
     	$movie = new Movie;
     	$arr['movie_name'] = $request->name;
     	$arr['movie_slug'] = str_slug($request->name);
@@ -58,7 +60,7 @@ class MovieController extends Controller
     	$arr['movie_status'] = $request->status;
     	$arr['movie_video'] = $request->url;
     	$arr['movie_info'] = $request->details;
-        $arr['movie_user'] = Auth::id();
+        $arr['movie_user'] = $request->id_user;
     	$arr['movie_cate'] = $request->cate;
         $arr['votes'] = 0;
 

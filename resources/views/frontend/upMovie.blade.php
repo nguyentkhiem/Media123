@@ -18,7 +18,7 @@
 					<div class="panel-heading" style="text-transform: capitalize; color: black; font-size: 27px;">Thêm phim truyện</div>
 					<div class="panel-body">
 						{{-- @include('errors.note') --}}
-						<form method="post" enctype="multipart/form-data" role="form">
+						<form method="post" enctype="multipart/form-data" role="form" action="{{ route('upLoadMovie.store') }}">
 							<div class="row" style="margin-bottom:40px">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								@foreach($errors->all() as $error)

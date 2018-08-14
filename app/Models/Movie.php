@@ -24,6 +24,6 @@ class Movie extends Model
     }
 
     public static function user($id){
-        return $user = DB::table('vp_movie')->join('vp_users', 'vp_movie.movie_user', '=', 'vp_users.user_id')->where('user_id', '=', $id)->get();
+        return $user = DB::table('vp_movie')->join('vp_users', 'vp_movie.movie_user', '=', 'vp_users.user_id')->where('movie_id', '=', $id)->select('vp_users.user_name as username', 'vp_movie.*')->first(); 
     } 
 }

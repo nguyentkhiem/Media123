@@ -57,7 +57,7 @@ class RegisterController extends Controller
         $count = DB::table('vp_users')->where('email', '=', $user_mail)->where('token', '=', $token)->update(['status' => 1]);
         
         
-        flash('Bạn cần đăng nhập để tiếp tục')->success();
+        flash('Đăng ký thành công - Bạn cần đăng nhập để tiếp tục')->success();
         return redirect()->intended('login');
         // ->withInput()->with('error', 'Bạn cần đăng nhập để tiếp tục');
     }

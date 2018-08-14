@@ -22,7 +22,7 @@ class LoginUserController extends Controller
     			return redirect()->intended('/');
     		}
     	}else{
-    		return back()->withInput()->with('error', 'Sai mat khau hoac password!');
+    		return back()->withInput()->with('error', 'Sai mật khẩu hoặc password!');
     	}
     }
 }

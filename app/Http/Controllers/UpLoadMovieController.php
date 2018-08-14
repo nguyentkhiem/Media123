@@ -16,8 +16,7 @@ class UpLoadMovieController extends Controller
      */
     public function index()
     {
-        $data['cates'] = Movie::cates();
-        return view('frontend.upMovie', $data);
+       // 
     }
 
     /**
@@ -27,7 +26,8 @@ class UpLoadMovieController extends Controller
      */
     public function create()
     {
-        //
+        $data['cates'] = Movie::cates();
+        return view('frontend.upMovie', $data);
     }
 
     /**

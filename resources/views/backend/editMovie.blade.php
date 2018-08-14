@@ -18,6 +18,7 @@
 					<div class="panel-body">
 						{{-- @include('errors.note') --}}
 						<form method="post" enctype="multipart/form-data" role="form">
+							<input type="hidden" name="id_user" value="{{ $movie->movie_user }}">
 							<div class="row" style="margin-bottom:40px">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								@foreach($errors->all() as $error)
@@ -37,8 +38,8 @@
 									<div class="form-group" >
 										<label>Trạng thái</label>
 										<select required name="status" class="form-control">
-											<option value="1" @if($movie->movie_status==1) selected @endif>Đang chiếu</option>
-											<option value="0" @if($movie->movie_status==0) selected @endif>Chưa chiếu</option>
+											<option value="1" @if($movie->movie_status==1) selected @endif>Cho chiếu</option>
+											<option value="0" @if($movie->movie_status==0) selected @endif>Cấm chiếu</option>
 					                    </select>
 									</div>
 									<div class="form-group" >

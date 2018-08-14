@@ -46,11 +46,11 @@
 											</td>
 											<td>
 												<?php
-													if($movie->movie_status==0){
-														 echo 'Chưa chiếu';
-														}
 													if($movie->movie_status==1){
-														echo 'Đang chiếu';
+														 echo 'Cho chiếu';
+														}
+													if($movie->movie_status==0){
+														echo 'Cấm chiếu';
 													}
 												?>
 											</td>

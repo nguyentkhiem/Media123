@@ -163,7 +163,7 @@
 					<div style="margin-bottom: 20px;" id="hottrends">
 						<h3>Đăng tải</h3>
 						<ul>
-							<li class="menu-item1"><a href="{{route('upLoadMovie.index')}}" title="">Phim Truyện</a></li>
+							<li class="menu-item1"><a href="{{route('upLoadMovie.create')}}" title="">Phim Truyện</a></li>
 							<li class="menu-item1"><a href="#" title="">Âm Nhạc</a></li>
 							<li class="menu-item1"><a href="#" title="">Tin Tức</a></li>
 							<li class="menu-item1"><a href="#" title="">Hình Ảnh</a></li>					

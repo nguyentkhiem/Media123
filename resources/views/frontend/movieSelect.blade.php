@@ -19,8 +19,8 @@
 			<p>Quốc gia: <span class="hight"> Âu - Mỹ</span></p>
 			<p>Thời lượng: <span class="hight"> 60 phút</span></p>
 			<p>Lượt xem: <span class="hight"> 6868</span></p>
-			<p>Năm sản xuất: <span class="hight"> 2018</span></p>
-			<p>Đăng bởi: <span class="hight"> hehe</span></p>
+			<p>Năm sản xuất: <span class="hight"> 2018</span></p> 
+			<p>Đăng bởi: <span class="hight"> {{$movie->username}}</span></p>
 			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 		</div>
 
